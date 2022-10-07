@@ -8,7 +8,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\TransportasiController;
 use App\Http\Controllers\PenginapanController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +38,11 @@ Route::post('/karyawan/update/{id}', [KaryawanController::class, 'update']);
 
 //user
 Route::get('/user', [UserController::class, 'index'])->name('user');
+Route::get('/user/add', [UserController::class, 'add']);
+Route::post('/user/insert', [UserController::class, 'insert']);
+Route::get('/user/{id}/delete', [UserController::class, 'destroy'])->name('user.destroy');
+Route::get('/user/edit/{id}', [UserController::class, 'edit']);
+Route::post('/user/update/{id}', [UserController::class, 'update']);
 
 //lokasi
 Route::get('/lokasi', [LokasiController::class, 'index'])->name('lokasi');
