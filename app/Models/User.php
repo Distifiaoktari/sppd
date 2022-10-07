@@ -54,8 +54,15 @@ class User extends Authenticatable
          
     }
 
+    public function addData($data)
+    {
+        DB::table('users')->insert($data);
+    }
+
     public function karyawan(){
         return $this->belongsTo('App\Karyawan');
     }
+
+    
     
 }
